@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="es">
+<head th:replace="~{fragments/layout :: head('Dashboard')}">
+</head>
+<body>
+
+<!-- Navbar -->
+<nav th:replace="~{fragments/layout :: navbar}"></nav>
+
+<!-- Main Content -->
+<div class="main-content">
+    <div class="container">
+
+        <!-- Welcome Section -->
+        <div class="welcome-section">
+            <div class="d-flex justify-content-between align-items-start flex-wrap gap-2">
+                <div>
+                    <h2>
+                        <i class="bi bi-emoji-smile me-2"></i>
+                        ¡Hola, <span th:text="${session.username}">Usuario</span>!
+                    </h2>
+                    <p>Bienvenido al sistema de gestión veterinaria VET EXPERTS</p>
+                </div>
+                <span class="badge-role" th:text="${session.rol}">ROL</span>
+            </div>
+        </div>
+
+        <!-- Dashboard Cards -->
+        <div class="row g-4">
+
+            <!-- Card: Propietarios -->
+            <div class="col-md-6 col-lg-4">
+                <a th:href="@{/propietarios}" class="text-decoration-none">
+                    <div class="dashboard-card">
+                        <div class="icon">
+                            <i class="bi bi-people-fill"></i>
+                        </div>
+                        <h5>Propietarios</h5>
+                        <p>Gestionar propietarios de mascotas</p>
+                    </div>
+                </a>
+            </div>
+
+            <!-- Card: Mascotas -->
+            <div class="col-md-6 col-lg-4">
+                <a th:href="@{/mascotas}" class="text-decoration-none">
+                    <div class="dashboard-card">
+                        <div class="icon">
+                            <i class="bi bi-heart-pulse-fill"></i>
+                        </div>
+                        <h5>Mascotas</h5>
+                        <p>Gestionar mascotas registradas</p>
+                    </div>
+                </a>
+            </div>
+
+            <!-- Card: Citas (futuro) -->
+            <div class="col-md-6 col-lg-4">
+                <div class="dashboard-card" style="opacity: 0.6; cursor: not-allowed;">
+                    <div class="icon">
+                        <i class="bi bi-calendar-check-fill"></i>
+                    </div>
+                    <h5>Citas</h5>
+                    <p>Próximamente</p>
+                    <span class="badge-custom" style="background: var(--background-alt); color: var(--text-secondary);">En desarrollo</span>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</div>
+
+<!-- Footer -->
+<footer th:replace="~{fragments/layout :: footer}"></footer>
+
+<div th:replace="~{fragments/layout :: scripts}"></div>
+
+</body>
+</html>

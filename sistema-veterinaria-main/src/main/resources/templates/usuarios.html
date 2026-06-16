@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="es">
+<head th:replace="~{fragments/layout :: head('Usuarios')}">
+</head>
+<body>
+
+    <!-- Fixed Left Sidebar & Mobile topbar -->
+    <nav th:replace="~{fragments/layout :: navbar}"></nav>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <div class="container">
+            
+            <div class="page-header">
+                <h1 class="page-title">
+                    <i class="bi bi-people-fill me-2" style="color: var(--primary);"></i>
+                    Usuarios del Sistema
+                </h1>
+            </div>
+
+            <div class="card-custom">
+                <div class="card-header-custom">
+                    <i class="bi bi-person-lines-fill me-1"></i> Lista de Cuentas y Accesos
+                </div>
+                <div class="card-body-custom p-0">
+                    <div class="table-responsive">
+                        <table class="table table-custom mb-0">
+                            <thead>
+                                <tr>
+                                    <th>Usuario</th>
+                                    <th>Rol</th>
+                                    <th>Estado</th>
+                                    <th>Acciones</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>admin</strong></td>
+                                    <td>
+                                        <span class="badge-custom badge-admin">ADMINISTRADOR</span>
+                                    </td>
+                                    <td>
+                                        <span class="badge bg-success">ACTIVO</span>
+                                    </td>
+                                    <td>
+                                        <button class="btn btn-warning-custom btn-sm" disabled>Editar</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><strong>veterinario</strong></td>
+                                    <td>
+                                        <span class="badge-custom badge-vet">VETERINARIO</span>
+                                    </td>
+                                    <td>
+                                        <span class="badge bg-success">ACTIVO</span>
+                                    </td>
+                                    <td>
+                                        <button class="btn btn-warning-custom btn-sm" disabled>Editar</button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer th:replace="~{fragments/layout :: footer}"></footer>
+
+    <div th:replace="~{fragments/layout :: scripts}"></div>
+</body>
+</html>
